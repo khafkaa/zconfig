@@ -1,0 +1,11 @@
+# Return TRUE if vpn client is connected
+# Return FALSE if vpn client is not connected
+
+vpnconnected(){
+    state=$( piactl get connectionstate )
+    if [ $state = "Connected" ]; then
+        return 0
+    else return 1
+    fi
+}
+

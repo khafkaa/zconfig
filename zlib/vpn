@@ -1,0 +1,24 @@
+# VPN INTERFACE
+
+# ARGUMENTS:
+#      connect: connects to the vpn
+#      disconnect:  discconects from the vpn
+#      region: selects a region for the vpn
+
+# USAGE:
+#      vpn connect
+#      vpn disconnect
+#      vpn france
+
+vpn(){
+    local ip="Unknown"
+    local regions=( $(piactl get regions) )
+    if [ "$1" = "connect" ]; then
+        piactl connect
+    elif [ "$1" = "disconnect" ]; then
+        piactl disconnect
+    elif isin $regions $1; then
+        piactl set region $1
+    else echo "Invalid Argument"
+    fi
+}

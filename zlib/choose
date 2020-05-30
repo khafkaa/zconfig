@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# choose a random file from the target directory and print it's contens to the stdout
+
+# arguments:
+#   $1 path to the directory
+#   $2 output color; number (0...255)
+
+function choose {
+    file=$( ls -1 $1 | shuf -n 1 )
+    cocat "$1/$file" $2
+}

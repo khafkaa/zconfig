@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+upper(){
+    if (( $# == 0 )); then
+      tr '[:lower:]' '[:upper:]'
+    else
+      echo "${(U)1}"
+    fi
+}

@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# with: process a file line by line
+
+# arguments:
+#    $1: The file to be processed
+
+# usage examples:
+#    with filename | tee -a newfile.txt
+#    with filename | tr '[:upper:]' '[:lower:]'
+#    with filename | sort -du
+
+with(){
+
+  if [ ! -e $1 ]; then
+    echo "Argument must be a valid text file!"; return 1;
+  else
+    while IFS= read -r line; do
+      echo $line
+   done < $1
+  fi
+}

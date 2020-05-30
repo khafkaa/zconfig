@@ -1,0 +1,12 @@
+# OPENS FILE SPECIFIED BY THE ARGUMENT $1 IN SUBLIME TEXT
+# IF IT EXISTS OTHERWISE IT CREATES THE FILE SPECIFIED BY ARGUMENT $1
+
+function sublime() {
+    if [ -e $1 ]; then
+        open -a "Sublime Text" $1
+    else
+        touch $1
+        open -a "Sublime Text" $1
+    fi
+}
+

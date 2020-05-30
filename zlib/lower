@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+lower(){
+    if (( $# == 0 )); then
+      tr '[:upper:]' '[:lower:]'
+    else
+      echo "${(L)1}"
+    fi
+}

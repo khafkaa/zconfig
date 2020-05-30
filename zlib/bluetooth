@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+# Connect a paired bluetooh device from the $NET(work)DEV(ices) array:
+
+# syntax: 
+#   To Connect: bluetooth -c GoogleNest 
+#   To Disconnect: bluetooth -d GoogleNest
+
+bluetooth(){
+    if [ "$1" = "-c" ]; then
+        BluetoothConnector --connect ${NETDEV[$2]} --notify
+
+    elif [ "$1" = "-d" ]; then
+        BluetoothConnector --disconnect ${NETDEV[$2]} --notify
+
+    else
+        echo "Connection Failed. Did you forget to include a flag?"
+        echo "Use -c to connect and -d to disconnect a device"
+    fi
+}

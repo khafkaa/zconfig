@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+#len (length)
+
+# ARGUMENTS
+# -a: lemgth of an array
+# -s: length of a scalar
+
+# USAGE:
+#  len -a $array
+#  len -s $scalar
+
+len() {
+  if [[ $# -eq 0 ]] || ! [[ $1 =~ '^-a|-s$' ]]; then
+    echo "Usage: $(basename $0) [-a array] [-s string]" 1>&2
+    return 1
+  fi
+
+  while getopts "as" OPTIONS; do
+    case "$OPTIONS" in
+      a) input=("$@"); echo "${#input[2,-1]}" ;;
+      s) input=$2; echo "${#input}" ;;
+      *) echo "Usage: $(basename $0) [-a array] [-s string]" 1>&2; return 1 ;;
+   esac
+  done
+}

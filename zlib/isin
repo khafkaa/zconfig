@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+#PASS AN ARRAY AND AN ELEMENT
+#RETURNS TRUE IF THE ELEMENT IS IN THE ARRAY
+#RETURNS FALSE IF THE ELEMENT IS NOT IN THE ARRAY
+
+isin(){
+    local -i result
+    input=("$@")
+    var=$input[-1]
+    array=("${input[@]:0:-1}")
+
+    for item in "${array[@]}"; do
+        if [ $item = $var ]; then
+            result=0
+            break
+        else result=1
+        fi
+    done && return $result
+}

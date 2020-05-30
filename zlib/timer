@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+# Simple CLI Timer
+
+# ARGUMENT:
+# An integer representing the duration in minutes
+
+trap 'tput cnorm; return 0' INT TERM
+
+tput civis
+
+duration=$(($1 * 60))
+start=$SECONDS
+now=1
+
+while [ $now -gt 0 ]; do
+    now="$((duration - (SECONDS - start)))"
+    output=$(date -r $now -u +%H:%M:%S)
+    echo -ne " $output      \r"
+done && echo -e "\033[2k"
+
+tput cnorm
+

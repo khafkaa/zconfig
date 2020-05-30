@@ -1,0 +1,17 @@
+setopt PROMPT_SUBST
+autoload -Uz vcs_info
+
+penv(){
+  if [ ! -z "${PIPENV_ACTIVE}" ]; then 
+    echo "%F{red}${PWD##*/}%f.%F{red}venv%f"
+  else
+    echo %F{red}samsara%f.%F{red}local%f
+  fi
+}
+
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:git*' formats "%F{blue}%s:(%F{red}%b%F{blue})%f"
+
+PS1="[$(penv)] %B%F{green}kафка%f%b %# "
+RPS1="%(?.\$vcs_info_msg_0_.%B%F{red}ошибка: %?%f%b)%f"

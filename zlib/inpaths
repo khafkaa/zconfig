@@ -1,0 +1,9 @@
+# $PATH variable introspection
+
+function inpaths(){
+    local get_paths=$PATH
+    pathlist=("${(@s/:/)get_paths}")
+    for path in $pathlist; do
+        echo $path
+    done
+}

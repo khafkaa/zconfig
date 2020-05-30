@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+source ~/.zcfg/zlib/vpnconnected
+
+if vpnconnected; then
+    echo " VPN: $(piactl get region | awk '{ print toupper($1) }') $(piactl get vpnip)"
+else
+    echo " VPN: #[fg=colour196,blink] DISCONNECTED"
+fi
+

@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Add specified path to global $PATH variable
+
+function addpth(){
+    export PATH=$PATH:$1
+}

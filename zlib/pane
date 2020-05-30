@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# Resize current TMUX pane
+
+# usage:
+# pane U 10
+
+pane(){
+    TMUX resize-pane -$1 ${2:-10}
+}
+

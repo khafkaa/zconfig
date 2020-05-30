@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+# TMUX Window (div)ision
+
+# ARGUMENTS:
+#    1. v or h for vertical ot horizontal split
+#    2. int indicating the precentage of the split; 75 means 75%
+
+# USAGE:
+#    div v 75
+
+div(){
+    tmux split-window $1p $2
+    tmux select-pane -t 0
+}

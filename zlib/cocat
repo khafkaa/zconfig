@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# color cat
+
+# arguments:
+#    $1 the target file 
+#    $2 color number (0...255)
+
+cocat(){
+   output=$( cat $1 )
+   echolr $output $2
+}

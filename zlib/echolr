@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# echo color
+# arguments:
+#     $1 ARGUMENT IS THE TEXT
+#     $2 IS THE COLOR NUMBER (0...255)
+
+echolr(){
+    echo -e "\e[38;5;$2m$1\e[0m"
+}
+

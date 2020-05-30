@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+#Check to see if a process is active
+#Returns 0 if True or non-zero if False
+#Argument:
+#    str: Name of the process
+
+izac(){
+    pgrep $1 > /dev/null
+}

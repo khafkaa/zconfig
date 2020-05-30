@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+libgen(){
+  /Users/kafka/Documents/devops/plib/scripts/libgenesis/libgenesis.py $@
+}

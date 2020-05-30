@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+# Simple WiFi Utility
+
+# ARGUMENTS:
+
+# up: Activate Wifi
+# down: Deactivate Wifi
+# preferred: List Preferred Netwoks
+# -s ssid -p pass: Connect to specified network
+
+local ssid
+local pass
+
+wifi(){
+   if isin up down $1; then
+      echo "sudo ifconfig en0 $1"
+   elif isin preferred $1; then
+      networksetup -listpreferredwirelessnetworks en0
+   else
+     while getopts "s:p:" OPTIONS; do
+       case "$OPTIONS" in
+         s) ssid="$OPTARG" ;;
+         p) pass="$OPTARG" ;;
+         ?) echo "USAGE: $(basename $0) [-s ssid] [-p password]"; return 1 ;;
+       esac
+     done
+     echo "sudo networksetup -setairportnetwork en0 $ssid $pass"
+   fi
+}

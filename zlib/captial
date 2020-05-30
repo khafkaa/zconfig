@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+captial(){
+    if (( $# == 0 )); then
+      awk '{for (i=1; i<=NF; ++i) { $i=toupper(substr($i,1,1)) tolower(substr($i,2)); } print }'
+    else
+      echo "${(C)1}"
+    fi
+}

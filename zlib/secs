@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# Convert minutes:seconds format to seconds
+# argument: minutes:seconds -> 5:30
+# usage: secs 4:45
+
+secs(){
+    mins=($(echo $1 | tr -s ":" ' '))
+    echo $((mins[1]*60 + mins[2]))
+}
+

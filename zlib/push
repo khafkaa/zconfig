@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+#Push a file to of of my servers
+
+#Usage:
+#  push home filename
+#  push root filename
+
+push(){
+  scp -P$PORTNM[$1] $2 $SERVER[$1]:$SCREPO[$1]
+}
