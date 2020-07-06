@@ -3,9 +3,12 @@ alias ls='ls -G'
 alias df="df -h"
 alias du="du -h"
 alias app="open -a"
-alias cls="clear && echolr ${PWD} 243 && ls"
+alias cls="clear; echolr $PWD 67 && ls"
 alias zzz="pmset sleepnow"
 alias debug="env -i /bin/zsh -f"
 alias zload='source ~/.zshrc && clear && choose ~/.zcfg/quotes 39 && echo'
 alias tload="tmux source-file ~/.tmux.conf"
 alias nano='/usr/local/Cellar/nano/4.9.3/bin/nano'
+alias ipython='hash -r && ipython'
+alias cookbook='open -a Preview /volumes/samsara.external/pdf/Python-Cookbook.pdf'
+

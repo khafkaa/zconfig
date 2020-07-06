@@ -7,7 +7,7 @@ stty -echoctl
 
 if which tmux 2>&1 >/dev/null; then
   if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
+    tmux attach -t mission-control || tmux new -s mission-control; exit
   fi
 fi
 
@@ -21,7 +21,7 @@ source ~/.zcfg/prenv
 for command in ~/.zcfg/zlib/*[^/]; do autoload -Uz $command; done
 
 autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd(){ clear; echolr ${PWD} 243; ls -G; }
+add-zsh-hook -Uz chpwd(){ clear; echolr ${PWD} 67; ls -G; }
 
 #bindings:
 #fn + left arrow: back one word
