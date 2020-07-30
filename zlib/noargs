@@ -1,0 +1,12 @@
+#/bin/zsh
+
+# Syntatic sugar for conditional readability.
+# Returns 0 if no arguments were passed.
+# Returns 1 if 1 or more argument were passed.
+
+# USAGE:
+#  if noargs $@; then...
+
+noargs(){
+  (( $# == 0 ))
+}

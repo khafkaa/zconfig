@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# trim leading and trailing whitespace
+
+strip(){
+  if noargs $@; then
+    awk '$1=$1'
+  else
+    echo $@ | awk '$1=$1'
+  fi
+}
