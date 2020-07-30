@@ -3,5 +3,5 @@
 # Checks which DNS servers are currently used by the system. 
 
 whoisdns(){
-   scutil --dns | grep 'nameserver\[[0-9]*\]'
+   scutil --dns | grep 'nameserver\[[0-9]*\]' | sort -u | awk '$1=$1'
 }
