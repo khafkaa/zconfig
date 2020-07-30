@@ -1,9 +1,5 @@
 #!/bin/zsh
 
 upper(){
-    if noargs $@; then
-      tr '[:lower:]' '[:upper:]'
-    else
-      echo "${(U)1}"
-    fi
+  noargs $@ && tr '[:lower:]' '[:upper:]' || echo "${(U)1}"
 }

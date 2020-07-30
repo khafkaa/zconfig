@@ -3,9 +3,5 @@
 # trim leading and trailing whitespace
 
 strip(){
-  if noargs $@; then
-    awk '$1=$1'
-  else
-    echo $@ | awk '$1=$1'
-  fi
+  noargs $@ && awk '$1=$1' || echo $@ | awk '$1=$1'
 }

@@ -1,9 +1,5 @@
 #!/bin/zsh
 
 lower(){
-    if noargs $@; then
-      tr '[:upper:]' '[:lower:]'
-    else
-      echo "${(L)1}"
-    fi
+  noargs $@ && tr '[:upper:]' '[:lower:]' || echo "${(L)1}"
 }
