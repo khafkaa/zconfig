@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Checks which DNS servers are currently used by the system. 
+
+whoisdns(){
+   scutil --dns | grep 'nameserver\[[0-9]*\]'
+}

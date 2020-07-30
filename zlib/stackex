@@ -1,5 +1,5 @@
 #!/bin/zsh
 
-stackexchange(){
-    /Users/kafka/Documents/devops/plib/scripts/stackcli/./stackexchange.py $@
+stackex(){
+    $stackpath./stackexchange.py $@
 }

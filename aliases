@@ -11,4 +11,4 @@ alias tload="tmux source-file ~/.tmux.conf"
 alias nano='/usr/local/Cellar/nano/4.9.3/bin/nano'
 alias ipython='hash -r && ipython'
 alias cookbook='open -a Preview /volumes/samsara.external/pdf/Python-Cookbook.pdf'
-
+alias sandbox='cd /Users/kafka/Documents/devops/plib/projects/sandbox && pipenv shell'
