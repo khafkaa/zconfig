@@ -11,5 +11,5 @@
 
 div(){
     tmux split-window $1p $2
-    tmux select-pane -t 0
+    tmux select-pane -t 1
 }
