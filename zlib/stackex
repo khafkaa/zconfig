@@ -1,5 +1,5 @@
 #!/bin/zsh
 
 stackex(){
-    $stackpath./stackexchange.py $@
+    $stackpath/stackexchange.py $@
 }

@@ -1,0 +1,5 @@
+# Syntatic Sugar for checking the state of a scalar variable
+# Returns 0 if variable is empty (null)
+# Returns 1 if string is not empty (not null)
+
+def null(){ [ -z "$1" ] }
