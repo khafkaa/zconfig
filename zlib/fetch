@@ -11,6 +11,6 @@
 fetch(){               
     local p=${PORTNM[${1[2,5]}]:-22}
     local s=${SERVER[${1[2,5]}]:-192.168.1.1}
-    scp -o ConnectTimeout=3 -P$p $s:$1 ~/Downloads
+    scp -o ConnectTimeout=3 -P$p $s:$1 ~/Documents/screpo
 }
 

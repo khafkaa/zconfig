@@ -4,7 +4,7 @@ sql(){
   case $1 in
     start) /usr/local/bin/mysql.server start ;;
     stop) /usr/local/bin/mysqladmin shutdown ;;
-    client) mysql -u $sqlpass ;;
+    client) mysql -h localhost -u kafka -p ;;
     status) /usr/local/bin/mysqladmin ping &> /dev/null && echolr 'Mariadb Server Is Up' 10 || echolr 'Mariadb Server Is Down' 9 ;;
     create) if [ -n "$2" ]; then /usr/local/bin/mysqladmin create $2; else echo "You must provide a name to create a database"; fi ;;
     drop)  if [ -n "$2" ]; then /usr/local/bin/mysqladmin drop $2; else echo "You must specify which database you intend to drop"; fi ;;

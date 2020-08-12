@@ -16,6 +16,7 @@ source ~/.zcfg/zprompt
 source ~/.zcfg/aliases
 source ~/.zcfg/spectrum
 source ~/.zcfg/prenv
+source ~/.zcfg/hashes
 
 #autoload zlib
 for command in ~/.zcfg/zlib/*[^/]; do autoload -Uz $command; done
