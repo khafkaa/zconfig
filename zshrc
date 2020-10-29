@@ -33,3 +33,4 @@ bindkey '^[[4~' forward-word
 
 
 
+export PATH="/usr/local/sbin:$PATH"

@@ -2,4 +2,5 @@
 hash -d zconf=$HOME/.zcfg
 hash -d sandbox=$HOME/Documents/devops/plib/projects/sandbox
 hash -d flaskproj=$HOME/Documents/devops/plib/projects/flask-projects
+hash -d envs=$HOME/Documents/devops/plib/projects
 
