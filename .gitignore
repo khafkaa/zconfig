@@ -1,3 +1,5 @@
 #Ignore local private environment variables
+aliases
+hashes
 prenv
 quotes/

@@ -1,0 +1,2 @@
+#!/bin/zsh
+ps | grep spotstat.py | grep -v grep > /dev/null && echo "$(cat ~/.zcfg/tlib/spotstat.info) " || echo "Samsara % $(date +'%a %b %d %R') "

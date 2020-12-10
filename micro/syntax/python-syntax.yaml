@@ -1,0 +1,64 @@
+filetype: python
+
+detect: 
+    filename: "\\.py$"
+
+rules:
+    - constant: "(@.+?$)"
+    - constant.bool: "\\b(True|False|None|[a-zA-Z]+=(True|False|None))\\b"
+
+    # function and class declarations and all caps variables
+    - identifier.class: "\\b[a-zA-Z0-9_]+\\.?\\(|\\b[A-Z_]+\\b"
+    - identifier: "(?:def\\s).+(?:\\(.*\\))(.*)?:"
+    - identifier.macro: "(?:class\\s).+(:|\\(.*\\):)"
+
+    - symbol.tag: "(\\(.*\\)(.*)?:.*?$)"
+    - identifier.var: "[a-zA-Z0-9]+\\."
+    - special: "\\.[a-zA-Z_]+\\("
+    - symbol.brackets: "(\\(.*\\)[^:]*?$)"
+    - symbol.brackets: "(@|\\(|\\)|,|\\||!|:|::|\\\\|;|||\\[|\\]|\\{|\\})"    
+    - symbol.operator: "(\\+|-|\\*|/|%|\\*\\*|//|=|\\+=|-=|\\*=|/=|%=|//=|\\*\\*=|&=|\\|=|^=|>>=|<<=|==|!=|>|<|>=|<=|&|\\||^|~|<<|>>)"
+
+    - identifier: "\\b(print|next|isinstance|range|len|hasattr|setattr|join|open|enumerate)\\b"
+
+    - constant.number: "\\b[0-9]\\d*(\\.\\d+)?\\b"
+
+    - type: "\\b(?i:(str|int|float|complex|list|tuple|dict|set|frozenset|bool|bytes|bytearray|memoryview))\\b"
+    - type: "\\b(?i:(AttributeError|AssertionError|EOFError|FloatingPointError|GeneratorExit|ImportError|ModuleNotFoundError|IndexError|KeyError|KeyboardInterrupt))\\b"
+    - type: "\\b(?i:(MemoryError|NameError|NotImplementedError|OSError|OverflowError|RecursionError|ReferenceError|RuntimeError|StopIteration|StopAsyncIteration))\\b"
+    - type: "\\b(?i:(SyntaxError|IndentationError|TabError|SystemError|SystemExit|TypeError|UnboundLocalError|UnicodeError|UnicodeEncodeError|UnicodeDecodeError))\\b"
+    - type: "\\b(?i:(UnicodeTranslateError|ValueError|ZeroDivisionError|EnvironmentError|IOError|BlockingIOError|ChildProcessError|ConnectionError|BrokenPipeError))\\b"
+    - type: "\\b(?i:(ConnectionAbortedError|ConnectionRefusedError|ConnectionResetError|FileExistsError|FileNotFoundError|InterruptedError|IsADirectoryError|NotADirectoryError))\\b"
+    - type: '\\b(?i:(PermissionError|ProcessLookupError|TimeoutError))\\b'
+    - symbol.tag: "(RequestException)"
+
+    - special: "\\b(self\\.)\\b"
+    - constant.specialChar: "(:|\\b_\\b|\\.|\\[|\\]|(from\\s.*|import\\s.*)|(as\\s[a-zA-Z]+:))" 
+    - statement: "\\b(as|async|assert|break|class|continue|def|del|elif|else|except|f|finally|for|from|global)\\b"
+    - statement: "\\b(if|in|import|is|lambda|nonlocal|not|pass|raise|return|try|while|with|yield)\\b"
+
+      # multi-line comment
+    - comment:
+        start: "\"\"\""
+        end: "\"\"\""
+        rules: []
+
+      # single-line comment
+    - comment:
+        start: "#"
+        end: "$"
+        rules: []
+
+    - constant.string: 
+        start: "\""
+        end: "\""
+        skip: "\\{.+?\\}"
+        rules:
+            - constant.specialChar: "\\{.+?\\}"
+
+    - constant.string:
+        start: "'"
+        end: "'"
+        rules:
+            - constant.specialChar: "\\{.+?\\}"
+

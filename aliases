@@ -1,7 +1,8 @@
 #aliases
 alias ls='ls -G'
+alias ll='ls -lG'
 alias df='df -h'
-alias du='du -h'
+alias du='du -sh'
 alias rm='rm -i'
 alias app='open -a'
 alias cls='clear; echolr $PWD 67 && ls'

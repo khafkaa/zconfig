@@ -11,4 +11,5 @@ export EDITOR='subl -w'
 typeset -U FPATH fpath
 fpath=(~/.zcfg/zlib $fpath)
 
-
+LS_COLORS='di=01:20'
+export LS_COLORS
