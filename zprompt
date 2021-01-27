@@ -5,7 +5,7 @@ penv(){
   if [ ! -z "${PIPENV_ACTIVE}" ]; then
     echo "%F{magenta}${PWD##*/}%f.%F{magenta}venv%f"
   else
-    echo %F{red}samsara%f.%F{red}local%f
+    echo %F{red}samsara%f.%F{yellow}local%f
   fi
 }
 
@@ -13,6 +13,6 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:git*' formats "%F{blue}[%F{red}%.%F{blue}] - %s:(%F{red}%b%F{blue})%f"
 
-PS1="[$(penv)] %B%F{green}kафка%f%b %# "
+PS1="[$(penv)] %F{green}kафка%f %# "
 RPS1="%(?.\$vcs_info_msg_0_.%B%F{red}ошибка: %?%f%b)%f"
 

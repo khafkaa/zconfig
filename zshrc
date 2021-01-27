@@ -22,7 +22,7 @@ source ~/.zcfg/hashes
 for command in ~/.zcfg/zlib/*[^/]; do autoload -Uz $command; done
 
 autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd(){ clear; echolr ${PWD} 67; ls -G; }
+add-zsh-hook -Uz chpwd(){ clear; echolr ${PWD} 242; ls -G; }
 
 #bindings:
 #fn + left arrow: back one word
@@ -31,6 +31,5 @@ bindkey '^[[1~' backward-word
 #fn + right arrow: forward one word
 bindkey '^[[4~' forward-word
 
-
-
 export PATH="/usr/local/sbin:$PATH"
+export LSCOLORS=gxfxcxdxbxexexabagacad

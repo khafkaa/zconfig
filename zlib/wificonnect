@@ -1,0 +1,23 @@
+#!/bin/zsh
+# Connect to specified wifi network
+# ARGUMENTS:
+#   -s ssid 
+#   -p password
+
+wificonnect(){
+     
+     local ssid
+     local pass
+     
+     while getopts "s:p:" OPTIONS; do
+       case "$OPTIONS" in
+         s) ssid="$OPTARG" ;;
+         p) pass="$OPTARG" ;;
+         ?) echo "USAGE: $(basename $0) [-s ssid] [-p password]"; return 1 ;;
+       esac
+     done
+
+     networksetup -setairportnetwork en0 $ssid $pass
+   
+   fi
+}

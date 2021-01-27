@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# ARGUMENT:
+#    path to the ebook file to send to kindle
+
+# USAGE:
+#    kindle ~/Downloads/ebook.mobi
+
+kindle(){
+    echo '' | mutt -F $kindleconfig -s '' theprometheanghost@kindle.com -a $1
+}

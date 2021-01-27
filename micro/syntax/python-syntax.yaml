@@ -23,7 +23,7 @@ rules:
 
     - constant.number: "\\b[0-9]\\d*(\\.\\d+)?\\b"
 
-    - type: "\\b(?i:(str|int|float|complex|list|tuple|dict|set|frozenset|bool|bytes|bytearray|memoryview))\\b"
+    - type: "\\b(?i:(str|int|float|complex|list|tuple|dict|set|frozenset|bool|bytes|bytearray|memoryview|Callable|Any))\\b"
     - type: "\\b(?i:(AttributeError|AssertionError|EOFError|FloatingPointError|GeneratorExit|ImportError|ModuleNotFoundError|IndexError|KeyError|KeyboardInterrupt))\\b"
     - type: "\\b(?i:(MemoryError|NameError|NotImplementedError|OSError|OverflowError|RecursionError|ReferenceError|RuntimeError|StopIteration|StopAsyncIteration))\\b"
     - type: "\\b(?i:(SyntaxError|IndentationError|TabError|SystemError|SystemExit|TypeError|UnboundLocalError|UnicodeError|UnicodeEncodeError|UnicodeDecodeError))\\b"

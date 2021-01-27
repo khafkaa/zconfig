@@ -6,10 +6,12 @@ export PYTHONPATH="/Users/kafka/Documents/devops/plib/mods"
 
 #set Sublime Text as default editor 
 export PATH=$PATH:$HOME/bin
-export EDITOR='subl -w'
+export EDITOR='vim'
+
+#set gopath and gopath/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 typeset -U FPATH fpath
 fpath=(~/.zcfg/zlib $fpath)
 
-LS_COLORS='di=01:20'
-export LS_COLORS

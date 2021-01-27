@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+spotify(){
+    case $1 in
+        info) $spotdir/spotapi.py -i ;;
+        like) $spotdir/spotapi.py -l ;;
+        playlists) $spotdir/spotapi.py -p ;;
+        *) $spotdir/spotapi.py -h && return 1 ;;
+    esac
+}

@@ -1,30 +1,23 @@
 #!/bin/zsh
-
-# Simple WiFi Utility
-
+# activate/deactivate wifi device
 # ARGUMENTS:
-
-# up: Activate Wifi
-# down: Deactivate Wifi
-# preferred: List Preferred Netwoks
-# -s ssid -p pass: Connect to specified network
-
-local ssid
-local pass
+#   up: activate wifi
+#   down: deactivate wifi
+#   networks: list avaiable visible wifi networks
 
 wifi(){
+   test -z "$1" && echo "arguments: up down networks"; return 1   
+   
    if isin up down $1; then
-      echo "sudo ifconfig en0 $1"
-   elif isin preferred $1; then
-      networksetup -listpreferredwirelessnetworks en0
-   else
-     while getopts "s:p:" OPTIONS; do
-       case "$OPTIONS" in
-         s) ssid="$OPTARG" ;;
-         p) pass="$OPTARG" ;;
-         ?) echo "USAGE: $(basename $0) [-s ssid] [-p password]"; return 1 ;;
-       esac
-     done
-     echo "sudo networksetup -setairportnetwork en0 $ssid $pass"
+      ifconfig en0 $1
+
+   elif isin networks $1; then
+       airport -s
+   
+   else 
+       echo "USAGE: $(basename $0)" 
+       echo "[up: enable wifi interface] [down: disable wifi interface]" 
+       echo "[networks: list available networks (wifi must be enabled)]"
+       return 1
    fi
 }
