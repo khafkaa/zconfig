@@ -7,5 +7,5 @@
 #    kindle ~/Downloads/ebook.mobi
 
 kindle(){
-    echo '' | mutt -F $kindleconfig -s '' theprometheanghost@kindle.com -a $1
+    echo '' | mutt -F $kindleconfig -s '' $kindleaddress -a $1
 }
