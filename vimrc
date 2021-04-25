@@ -7,6 +7,7 @@ endif
 
 call plug#begin()
 Plug 'morhetz/gruvbox'
+Plug 'vim-python/python-syntax' 
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
@@ -25,14 +26,10 @@ Plug 'alvan/vim-closetag'
 Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
-filetype plugin indent on
-syntax on
-
 if need_to_install_plugins == 1
     echo "Installing plugins..."
-    silent! PlugInstall
+    silent! PlugInstall:
     echo "Done!"
-    q
 endif
 
 " always show the status bar
@@ -57,6 +54,7 @@ set softtabstop=4
 set colorcolumn=80
 set expandtab
 set viminfo='25,\"50,n~/.viminfo
+
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -93,13 +91,13 @@ function ToggleMouse()
     endif
 endfunction
 
+filetype plugin indent on
+
 " color scheme
 syntax on
 colorscheme gruvbox
 set background=dark
 
-filetype on
-filetype plugin indent on
 
 " lightline
 set noshowmode
@@ -203,3 +201,5 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
+" enable all Python syntax highlighting features
+let g:python_highlight_all = 1

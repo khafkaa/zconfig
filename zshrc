@@ -1,5 +1,5 @@
 setopt AUTO_CD
-setopt GLOB_COMPLETE
+setopt NO_CASE_GLOB
 
 unsetopt NO_HUP
 
@@ -33,3 +33,4 @@ bindkey '^[[4~' forward-word
 
 export PATH="/usr/local/sbin:$PATH"
 export LSCOLORS=gxfxcxdxbxexexabagacad
+

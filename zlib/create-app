@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# usage: create-app name
+
+test -z "$1" && exit 1
+cp -R ~/.local/templates/cli-template . && mv cli-template $1 && tree $1
+
